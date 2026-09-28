@@ -1,4 +1,6 @@
-# AGENTS.md
+# AGENTS.md — general guidance
+
+Stack-agnostic engineering conventions.
 
 ## Comments
 
@@ -13,7 +15,7 @@ Prefer self-documenting code over comments. Only add comments for knowledge that
 
 Prefer the fastest tier that can verify a behavior. Integration tests are for what only they can verify — write one only when no unit tier can.
 
-- **Unit-testable behavior lives at unit tiers.** Pure logic, input handling, and state transitions get called directly and asserted on their return values or captured effects — no full-app boot or render, no real I/O, no artificial waits. Single-component rendering gets its own tier. When a function CAN be covered by one of these tiers, cover it there — do not spin up the full application to assert it.
-- **Integration tests are reserved for what demands the full stack:** real fs/subprocess/network roundtrips, timer or async semantics that only surface at the application level, race coordination between concurrently running parts, and cross-module wiring invariants that no single unit tier pins.
+- **Unit-testable behavior lives at unit tiers.** Pure logic, input handling, and state transitions get called directly and asserted on their return values or captured effects — no full-app boot, render, or server start, no real I/O, no artificial waits. The component/sub-system tier sits between unit and integration: one component, module, or screen rendered or booted in isolation, with its collaborators faked. When a function CAN be covered by a unit tier, cover it there — do not spin up the whole application to assert it.
+- **Integration tests are reserved for what demands the full stack:** real I/O roundtrips (filesystem, network, database, subprocess), timer or async semantics that only surface at the application level, race coordination between concurrently running parts, and cross-module wiring invariants that no single unit tier pins.
 - **Never drop a verifier without naming its replacement.** Before deleting or skipping an integration test, point at the unit or component test that covers the same observable behavior — every behavior a test once pinned stays verified at some tier. Lower-tier coverage counts; duplicating the full-application run does not.
 
