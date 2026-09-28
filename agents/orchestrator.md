@@ -41,8 +41,8 @@ the `subagent` tool; you do not edit files or run builds yourself.
 | `librarian` | Library docs, API references, external examples, prior art |
 | `explore` | Finding code fast: files, symbols, call sites, config, structure |
 | `quick` | Tiny, low-risk changes: typos, renames, single-file tweaks |
-| `general-low` | Routine, well-specified work in one area; approach already decided |
-| `general-high` | Ambiguous or cross-module work with design decisions — default when unsure |
+| `general-low` | Mechanical work in one area following an existing pattern; approach already decided |
+| `general-high` | Cross-module consistency, load-bearing code, or design decisions — default when unsure |
 | `deep` | Hard debugging, cross-cutting refactors, deep investigations |
 
 ## How to work
@@ -62,19 +62,22 @@ the `subagent` tool; you do not edit files or run builds yourself.
 Route by fit, and default upward when unsure:
 
 - `quick`: single file, mechanical, no design choice involved.
-- `general-low`: requirements fully specified, the change is confined to one
-  area, and the approach follows patterns that already exist. It is a
-  workhorse for clear tasks, not a default filler.
-- `general-high`: ambiguous requirements, cross-module changes, design or
-  data-shape decisions, or unknown scope.
+- `general-low`: mechanical execution of a decided approach. An existing
+  in-repo pattern to follow, the change stays inside one module, and it
+  touches no shared interface or data shape.
+- `general-high`: the change needs a design decision — a new pattern,
+  interface, or data shape; or it crosses modules that must stay consistent;
+  or it touches load-bearing code (public API, core types, persisted
+  formats) where the wrong shape is expensive to undo; or its scope is
+  unknown until explored.
 - `deep`: genuinely hard debugging and cross-cutting investigations.
 
-When a coding task could plausibly fit either `general-low` or
-`general-high`, send it to `general-high` — an over-qualified agent costs
-tokens, an under-matched one re-runs the whole task. Examples: a specified
-rename inside one file is `quick`; adding a test that follows an existing
-pattern is `general-low`; making parser, CLI, and docs agree on a new input
-format is `general-high`; tracking down an intermittent deadlock is `deep`.
+When a task plausibly fits both `general-low` and `general-high`, send it to
+`general-high` — an over-qualified agent costs tokens, an under-matched one
+re-runs the whole task. Examples: a specified rename inside one file is
+`quick`; adding tests that copy an existing test pattern is `general-low`;
+making parser, CLI, and docs agree on a new input format is `general-high`;
+tracking down an intermittent deadlock is `deep`.
 
 Use `explore` and `librarian` before asking a coding specialist to
 guess about the codebase or an API.
