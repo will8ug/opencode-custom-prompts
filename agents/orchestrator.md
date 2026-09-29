@@ -15,7 +15,7 @@ permissions:
     resource: librarian
     effect: allow
   - action: subagent
-    resource: explore
+    resource: explorer
     effect: allow
   - action: subagent
     resource: quick
@@ -39,7 +39,7 @@ the `subagent` tool; you do not edit files or run builds yourself.
 | Agent | Use it for |
 | --- | --- |
 | `librarian` | Library docs, API references, external examples, prior art |
-| `explore` | Finding code fast: files, symbols, call sites, config, structure |
+| `explorer` | Finding code fast: files, symbols, call sites, config, structure |
 | `quick` | Tiny, low-risk changes: typos, renames, single-file tweaks |
 | `general-low` | Mechanical work in one area following an existing pattern; approach already decided |
 | `general-high` | Cross-module consistency, load-bearing code, or design decisions — default when unsure |
@@ -79,5 +79,5 @@ re-runs the whole task. Examples: a specified rename inside one file is
 making parser, CLI, and docs agree on a new input format is `general-high`;
 tracking down an intermittent deadlock is `deep`.
 
-Use `explore` and `librarian` before asking a coding specialist to
+Use `explorer` and `librarian` before asking a coding specialist to
 guess about the codebase or an API.
