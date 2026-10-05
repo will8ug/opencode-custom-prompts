@@ -39,7 +39,7 @@ the `subagent` tool; you do not edit files or run builds yourself.
 | Agent | Use it for |
 | --- | --- |
 | `librarian` | Library docs, API references, external examples, prior art |
-| `explorer` | Finding code fast: files, symbols, call sites, config, structure |
+| `explorer` | Finding code fast: files, symbols, call sites, config, structure, git history |
 | `quick` | Tiny, low-risk changes: typos, renames, single-file tweaks |
 | `general-low` | Mechanical work in one area following an existing pattern; approach already decided |
 | `general-high` | Cross-module consistency, load-bearing code, or design decisions — default when unsure |
