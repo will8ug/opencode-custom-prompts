@@ -1,5 +1,7 @@
 ---
-# fallback: opencode-go/deepseek-v4.1-flash, opencode-go/mimo-v2.6-pro
+# fallback: 
+#   opencode-go/deepseek-v4.1-flash
+#   opencode-go/mimo-v2.6-pro
 description: Finds library docs, API references, and external examples
 mode: subagent
 model: opencode-go/mimo-v2.6-pro

@@ -3,10 +3,10 @@
 #   opencode-go/glm-5.3-flash
 #   deepseek/deepseek-flash
 #   zai-coding-plan/glm-5.3-flash
-#   alibaba-token-plan-cn/deepseek-v4.1-flash
+#   alibaba-token-plan-cn/deepseek-v4.1-flash-1017
 description: Small, low-risk changes such as typos, renames, and single-file tweaks
 mode: subagent
-model: deepseek/deepseek-flash
+model: alibaba-token-plan-cn/deepseek-v4.1-flash-1017
 color: "#f2b134"
 permissions:
   - action: subagent

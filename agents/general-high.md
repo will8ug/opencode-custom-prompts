@@ -6,7 +6,7 @@
 #   deepseek/deepseek-v4-pro#max, #high
 description: Complex, ambiguous, or architecture-sensitive work
 mode: subagent
-model: zai-coding-plan/glm-5.3#max
+model: alibaba-token-plan-cn/qwen3.8-max#xhigh
 color: "#e0645c"
 permissions:
   - action: subagent

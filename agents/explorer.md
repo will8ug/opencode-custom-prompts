@@ -1,8 +1,12 @@
 ---
-# fallbacks: deepseek/deepseek-flash, opencode-go/minimax-m3, opencode-go/qwen3.8-flash
+# fallbacks: 
+#   deepseek/deepseek-flash, 
+#   opencode-go/minimax-m3, 
+#   opencode-go/minimax-m3.1-flash, 
+#   opencode-go/qwen3.8-flash
 description: Searches and maps the codebase without changing it
 mode: subagent
-model: opencode-go/minimax-m3
+model: opencode-go/minimax-m3.1-flash
 color: "#2fbf9f"
 permissions:
   - action: edit

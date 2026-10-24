@@ -6,7 +6,7 @@
 #   deepseek/deepseek-v4-pro#max, #high
 description: Mechanical implementation of a decided approach, following existing patterns
 mode: subagent
-model: zai-coding-plan/glm-5.3-flash#max
+model: opencode-go/glm-5.3-flash#max
 color: "#5ec26a"
 permissions:
   - action: subagent
