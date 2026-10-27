@@ -9,7 +9,7 @@ Prefer self-documenting code over comments. Only add comments for knowledge that
 - **Self-document first.** Use clear test names, descriptive assertion values, and meaningful function names. A switch statement or a plain assertion with a self-explanatory expected value is already its own documentation.
 - **Never restate what the code says.** If a comment describes what the next line does, the code already says that — remove the comment.
 - **Never reference change history.** Comments like `// After the refactor, ...` are git-history noise. The commit message already captures what changed. Explain the *current state*, not the transition.
-- **Reserve comments for non-obvious knowledge only:** gotchas that look correct but aren't (e.g., an em-dash resembling a hyphen), design decisions not evident from the code (e.g., a custom encoding scheme), and contract invariants a maintainer might unknowingly violate (e.g., "assumes input is already validated").
+- **Reserve comments for non-obvious knowledge only:** gotchas that look correct but aren't (e.g., an em-dash resembling a hyphen), and design decisions not evident from the code (e.g., a custom encoding scheme).
 
 ## Testing pyramid
 
